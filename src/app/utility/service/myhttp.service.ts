@@ -14,7 +14,7 @@ export class MyHttpService{
      sendRequest(url,callback){
         var myLoading=this.loadingCtrl.create({content:"正在加载数据..."})
         myLoading.present()
-
+         //withCredentials:true 允许跨域请求可以携带session id
         this.myhttp.get(url,{withCredentials:true}).subscribe((res)=>{
             myLoading.dismiss();
             console.log(res)
